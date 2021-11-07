@@ -30,5 +30,6 @@ namespace Api.DTOs
         public string Country { get; set; }
 
         public ICollection<PhotoDto> Photos { get; set; }
+
     }
 }

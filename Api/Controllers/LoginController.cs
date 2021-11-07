@@ -18,7 +18,6 @@ namespace Api.Controllers
         public LoginController(DataContext context, ITokenService tokenService)
         {
             _tokenService = tokenService;
-            _tokenService = tokenService;
             _context = context;
         }
 
@@ -37,7 +36,8 @@ namespace Api.Controllers
             }
             return new UserDto{
                 Username = user.UserName,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                KnownAs = user.KnownAs
             };
         }
     }
